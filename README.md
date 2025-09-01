@@ -1,56 +1,49 @@
+# Desafio DIO — Azure Speech & Language (Speech Studio + Language Studio)
 
----
+Documentação dos testes práticos com **Azure AI Speech** (STT/TTS) e **Azure AI Language** (Sentiment, Key Phrases, Language Detection). Repositório organizado com prints, passos e insights para replicação.
 
-## 🎙️ Speech Studio
+## 🔗 Índice
+- [Objetivos](#objetivos)
+- [Como reproduzir](#como-reproduzir)
+- [Resultados (prints)](#resultados-prints)
+- [Insights](#insights)
+- [Referências](#referências)
 
-### 🔹 Speech-to-Text
-Convertemos áudio em texto.  
-![Speech STT](images/speech-stt.png)
+## Objetivos
+- Testar **Speech-to-Text** e **Text-to-Speech** no Speech Studio.
+- Testar **Sentiment**, **Key Phrases** e **Language Detection** no Language Studio.
+- Registrar prints e aprendizados em GitHub.
 
-### 🔹 Text-to-Speech
-Geramos voz neural a partir de texto.  
-![Speech TTS](images/speech-tts.png)
+## Como reproduzir
+1. Criar recursos **Speech** e **Language** no Azure (região: Brazil South ou East US).
+2. **Speech Studio**
+   - STT: enviar áudio curto (10–20s).  
+   - TTS: escolher voz neural pt-BR e sintetizar texto.
+3. **Language Studio**
+   - Sentiment: rodar textos positivo/negativo/neutro.
+   - Key Phrases: rodar um parágrafo.
+   - Language Detection: rodar PT/EN/ES.
 
----
+## Resultados (prints)
+### Speech Studio
+- **STT** – ![Speech STT](images/speech-stt.png)
+- **TTS** – ![Speech TTS](images/speech-tts.png)
 
-## 📝 Language Studio
+### Language Studio
+- **Sentiment**  
+  Positivo – ![Positivo](images/lang-sentiment-positive.png)  
+  Negativo – ![Negativo](images/lang-sentiment-negative.png)  
+  Neutro – ![Neutro](images/lang-sentiment-neutral.png)
+- **Key Phrases** – ![Key Phrases](images/lang-keyphrases.png)
+- **Language Detection** – ![ES](images/lang-detect1.png) ![EN](images/lang-detect2.png) ![PT](images/lang-detect3.png)
 
-### 🔹 Análise de Sentimento
-- **Positivo**  
-![Sentimento Positivo](images/lang-sentiment-positive.png)
+## Insights
+- Áudio curto e ambiente silencioso ↑ acurácia do STT.  
+- Vozes neurais pt-BR no TTS têm boa naturalidade.  
+- Sentiment e Key Phrases aceleram leitura de feedbacks.  
+- Language Detection funcionou bem (confiança alta nos 3 idiomas).
 
-- **Negativo**  
-![Sentimento Negativo](images/lang-sentiment-negative.png)
-
-- **Neutro**  
-![Sentimento Neutro](images/lang-sentiment-neutral.png)
-
-### 🔹 Extração de Palavras-chave
-![Key Phrases](images/lang-keyphrases.png)
-
-### 🔹 Detecção de Idioma
-![Detecção de Idioma](images/lang-detect1.png)  
-![Detecção de Idioma](images/lang-detect2.png)  
-![Detecção de Idioma](images/lang-detect3.png)
-
----
-
-## 💡 Insights
-- Áudios curtos e ambiente silencioso melhoram a acurácia do STT.  
-- As vozes neurais **pt-BR** do TTS soam muito naturais.  
-- O *Sentiment Analysis* funciona bem em textos curtos e objetivos.  
-- A extração de *Key Phrases* ajuda a resumir feedbacks.  
-- A detecção de idioma tem alta confiabilidade (100% nos testes PT, EN, ES).
-
----
-
-## 🔗 Referências
-- [Microsoft Speech Studio](https://speech.microsoft.com/)  
-- [Microsoft Language Studio](https://language.cognitive.azure.com/)  
-- [Documentação oficial Azure AI](https://learn.microsoft.com/azure/cognitive-services/)
-
----
-
-## 🚀 Entrega
-Repositório desenvolvido como parte do desafio da [Digital Innovation One](https://www.dio.me/).
-# dio-azure-speech-language
+## Referências
+- https://speech.microsoft.com/  
+- https://language.cognitive.azure.com/  
+- https://learn.microsoft.com/azure/cognitive-services/
